@@ -10,7 +10,7 @@
 
 3. 支持大量邮件重复发送
 
-4. 能伪造邮件地址发送哟见
+4. 能伪造邮件地址发送见
 
 5. 具有可视化界面
 
@@ -20,5 +20,15 @@
 
    需要通过键盘输入的内容：发送地址、发送内容、预置邮件发送数量，文件上传与预览
 
-   Tkinter
+   Tkinter是python的标准GUI库
+
+   **创建一个GUI程序**：
+import Tkinter  #导入包
+from tkinter.messagebox import showinfo,showwarning,showerror #各种类型的提示框
+top=Tkinter.Tk() #顶层窗口
+top.mainloop()  #运行GUI应用
+
+**键盘事件监听**
+
+
 
