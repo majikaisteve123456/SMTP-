@@ -1,4 +1,4 @@
-## 基于SMTP协议的邮件伪造和邮件炸弹##
+## 基于SMTP协议的邮件伪造和邮件炸弹
 
 基于python实现
 
@@ -28,7 +28,9 @@ from tkinter.messagebox import showinfo,showwarning,showerror #各种类型的�
 top=Tkinter.Tk() #顶层窗口
 top.mainloop()  #运行GUI应用
 
-**键盘事件监听**
+**使用easygui来实现文件预览**
+实现文件预览功能，创建按钮进行事件监听，弹框选择文件，读取文件内容到text控件中，返回给非界面代码处理的有file的路径，对历史文件的保存
+
 
 
 
