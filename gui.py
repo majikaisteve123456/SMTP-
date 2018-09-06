@@ -12,43 +12,56 @@ dic={}
 class App:
     entry1 = None
     entry2 = None
+    entry3=None
+    entry4=None
     text4 = None
     text5=None
     def __init__(self,top):
         dic['filepath']=''
         # 放置label和键盘输入框
-        text1 = Label(top, text="发送地址:").grid(row=0, sticky=W)
+        text_s = Label(top, text="发件人:").grid(row=0, sticky=W)
+        App.entry3 = Entry(top, width=30)  # 实例化一个输入框
+        App.entry3.grid(column=0, row=0, sticky=E)
+
+        text_sn= Label(top, text="发件人名称:").grid(row=1, sticky=W)
+        App.entry4 = Entry(top, width=30)  # 实例化一个输入框
+        App.entry4.grid(column=0, row=1, sticky=E)
+
+        text1 = Label(top, text="收件人:").grid(row=2, sticky=W)
         App.entry1 = Entry(top,width=30)  # 实例化一个输入框
-        App.entry1.grid(column=0, row=0,sticky=E)
-        text2 = Label(top, text="邮件发送数目: ").grid(row=1, sticky=W)
+        App.entry1.grid(column=0, row=2,sticky=E)
+
+        text2 = Label(top, text="邮件发送数目: ").grid(row=3, sticky=W)
         App.entry2 = Entry(top,width=30)  # 实例化一个输入框
-        App.entry2.grid(column=0, row=1,sticky=E)
+        App.entry2.grid(column=0, row=3,sticky=E)
 
         # 选择附件
-        text5 = Label(top, text="添加附件:").grid(row=3, sticky=W)
-        button0 = Button(top, width=10, text='选择附件', command=self.elect_file).grid(row=4, column=0, pady=4)
-        button1 = Button(top, width=10, text='预览附件内容', command=self.view_file_content).grid(row=4, column=1, pady=4)
-        button2 = Button(top, width=10, text='添加附件内容', command=self.add_file_content).grid(row=5, column=0, pady=4)
-        button3 = Button(top, width=10, text='保存文件', command=self.save_file).grid(row=5, column=1, pady=4)
+        text5 = Label(top, text="添加附件:").grid(row=4, sticky=W)
+        button0 = Button(top, width=10, text='选择附件', command=self.elect_file).grid(row=5, column=0, pady=4)
+        button1 = Button(top, width=10, text='预览附件内容', command=self.view_file_content).grid(row=5, column=1, pady=4)
+        button2 = Button(top, width=10, text='添加附件内容', command=self.add_file_content).grid(row=6, column=0, pady=4)
+        button3 = Button(top, width=10, text='保存文件', command=self.save_file).grid(row=6, column=1, pady=4)
 
         # 文本框text组件 预览
-        text5 = Label(top, text="附件预览内容:").grid(row=6, sticky=W)
+        text5 = Label(top, text="附件预览内容:").grid(row=7, sticky=W)
         App.text5 = ScrolledText(top, width=40, height=10)
         App.text5.grid(sticky=W)
         App.text5.config(state=DISABLED)
 
         # 文本框text组件 实际发送内容
-        text3 = Label(top, text="发送内容:").grid(row=9, sticky=W)
+        text3 = Label(top, text="发送内容:").grid(row=10, sticky=W)
         App.text4 = ScrolledText(top, width=40, height=10)
         App.text4.grid(sticky=W)
 
         # 发送键
-        button4= Button(top, width=15, text='发送', command=self.show_entry_fields).grid(row=11, column=0, pady=4)
+        button4= Button(top, width=15, text='发送', command=self.show_entry_fields).grid(row=12, column=0, pady=4)
 
         # 监听键盘事件,按确定后
     def show_entry_fields(self):
          dic['recevier']=App.entry1.get()
          dic['number']=App.entry2.get()
+         dic['sender']=App.entry3.get()
+         dic['sender_name']=App.entry4.get()
          s=App.text4.get("0.0", "end")
          dic['content']=s.strip()
 
