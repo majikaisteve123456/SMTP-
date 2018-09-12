@@ -14,7 +14,7 @@
 
 5. 具有可视化界面
 
-   
+    
 
    **开发python GUI界面**：
 
@@ -22,14 +22,22 @@
 
    Tkinter是python的标准GUI库
 
-   **创建一个GUI程序**：
-import Tkinter  #导入包
-from tkinter.messagebox import showinfo,showwarning,showerror #各种类型的提示框
-top=Tkinter.Tk() #顶层窗口
-top.mainloop()  #运行GUI应用
+   
 
-**使用easygui来实现文件预览**
+**使用easygui来实现文件预览:**
 实现文件预览功能，创建按钮进行事件监听，弹框选择文件，读取文件内容到text控件中，返回给非界面代码处理的有file的路径，对历史文件的保存
+
+
+
+**非界面代码：**
+
+菜鸟教程有python模块有相关介绍，主要是多线程编程，只有自己搭了SMTP服务器才可以没有邮箱系统的些许限制，比如每日发送的邮箱封数、建立连接的次数等
+
+
+
+**该项目的实现重点：**
+
+自己在本地搭一个SMTP服务器，完成匿名发送，可使用软件advanced-direct-remailer_Vg83jx_0614532503
 
 
 
