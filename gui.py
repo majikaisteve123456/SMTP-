@@ -6,6 +6,7 @@ from tkinter.scrolledtext import ScrolledText
 import easygui as g
 import os
 import shutil
+import test
 
 global dic
 dic={}
@@ -64,13 +65,16 @@ class App:
          dic['sender_name']=App.entry4.get()
          s=App.text4.get("0.0", "end")
          dic['content']=s.strip()
+         email_num=int(dic['number'])
+         #test.send(1, "xidianbtest@163.com", "hello", "西电教务处", "xidianbtest@163.com")
+         test.send(email_num,dic['recevier'],dic['content'],dic['sender_name'],dic['sender'])
 
 
 #选择附件
     def elect_file(self):
         msg = '浏览文件并打开'
         title = '测试'
-        default = r'C:\Users\lenovo\Desktop\SMTP邮件\文件库\*'
+        default = r'C:\Users\纯洁王\PycharmProjects\SMTP\文件库\*'
         fileType = '全部文件'
         filePath = g.fileopenbox(msg, title, default, fileType)
         dic['filepath']=filePath
@@ -100,7 +104,7 @@ class App:
         if dic['filepath']=='':
               messagebox.showinfo(title='警告', message='未选择附件')
         else:
-              shutil.copy(dic['filepath'],r'C:\Users\lenovo\Desktop\SMTP邮件\文件库')
+              shutil.copy(dic['filepath'],r'C:\Users\纯洁王\PycharmProjects\SMTP\文件库')
               messagebox.showinfo(title='提示', message='保存成功')
 
 #顶层窗口
