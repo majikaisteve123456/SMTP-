@@ -74,7 +74,7 @@ class App:
     def elect_file(self):
         msg = '浏览文件并打开'
         title = '测试'
-        default = r'C:\Users\纯洁王\PycharmProjects\SMTP\文件库\*'
+        default = r'C:\Users\xxxxx\SMTP\文件库\*'
         fileType = '全部文件'
         filePath = g.fileopenbox(msg, title, default, fileType)
         dic['filepath']=filePath

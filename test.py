@@ -7,8 +7,8 @@ from email.utils import formataddr
 
 
 my_sender='xidianbtest@163.com' #发件人邮箱账号，为了后面易于维护，所以写成了变量
-my_user='18292884508@163.com' #收件人邮箱账号，为了后面易于维护，所以写成了变量
-my_pass='tsw123'
+my_user='xxxx@163.com' #收件人邮箱账号，为了后面易于维护，所以写成了变量
+my_pass='xxxx'
 lock=threading.Lock()
 
 
@@ -26,8 +26,8 @@ def mail(num,receiver,content,from_name,from_add):
             # msg['To'] = receiver
 
             msg['From'] = formataddr([from_name,from_add]) #括号里的对应发件人邮箱昵称、发件人邮箱账号
-            msg['To']=formataddr(["18292884508",receiver])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-            msg['Subject']="纯洁小天使" #邮件的主题，也可以说是标题
+            msg['To']=formataddr(["xxx",receiver])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
+            msg['Subject']="xxx" #邮件的主题，也可以说是标题
 
             server.sendmail(from_add,[receiver,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
         server.quit()
