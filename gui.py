@@ -104,7 +104,7 @@ class App:
         if dic['filepath']=='':
               messagebox.showinfo(title='警告', message='未选择附件')
         else:
-              shutil.copy(dic['filepath'],r'C:\Users\纯洁王\PycharmProjects\SMTP\文件库')
+              shutil.copy(dic['filepath'],r'C:\Users\xxxx\SMTP\文件库')
               messagebox.showinfo(title='提示', message='保存成功')
 
 #顶层窗口
